@@ -1,0 +1,112 @@
+;File inclusion
+include-file = ~/.config/polybar/scripts/colors.ini
+include-file = ~/.config/polybar/scripts/modules.ini
+
+[bar/strawberry]
+width = 100%
+height = 24
+radius = 0.0
+bottom = true
+fixed-center = false
+
+background = ${colors.bg1}
+foreground = ${colors.fg2}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Fantasque Sans Mono:pixelsize=10;1"
+;font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+;font-1 = "Siji:pixelsize=10;1"
+font-1 = "Material Icons:fontformat=truetype:size=10:antialias=true;0"
+font-2 = "Tamsyn:pixelsize=12;0"
+font-3 = "Roboto:size=11:weight=bold;2"
+font-4 = "Fantasque Sans Mono:weight=bold;0"
+;font-5 = "Symbols Nerd Font:size=11;1"
+;font-6 = "Symbols Nerd Font:size=12;1"
+
+modules-left = i3
+modules-right = empty homespace filesystem backlight-acpi pulseaudio xkeyboard memory cpu wlan wired-network temperature battery jam powermenu
+
+tray-position = right
+tray-padding = 0
+tray-background = ${colors.bg2}
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;[bar/pow]
+;width = 10%
+;height = 24
+;radius = 0.0
+;bottom = true
+;fixed-center = false
+;wm-restack = i3
+;override-redirect = true
+
+;modules-right = date powermenu
+
+;background = ${colors.background}
+;foreground = ${colors.foreground}
+
+;line-size = 3
+;line-color = #f00
+
+;border-size = 0
+;border-color = #00000000
+
+;padding-left = 0
+;padding-right = 0
+
+;module-margin-left = 2
+;module-margin-right = 2
+
+;font-0 = "Fantasque Sans Mono:pixelsize=10;1"
+;font-0 = "FantasqueSansMono Nerd Font:pixelsize=10;1"
+;font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+;font-2 = siji:pixelsize=10;1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+;[module/mpd]
+;type = internal/mpd
+;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause = 
+;icon-next = 
+
+;label-song-maxlen = 25
+;label-song-ellipsis = true
+
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
