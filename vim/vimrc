@@ -1,0 +1,250 @@
+" A Learn by doing vimrc
+" Written by:
+" Ari Selpama Diutri
+" Referenced from various sources
+" Nothing fancy, love vim's default things
+" So these are wrote with taste of:
+" 'Add as little as possible'
+
+" VIM-PLUG --- {{{
+call plug#begin('~/.vim/plugged')
+
+" vimtex
+Plug 'lervag/vimtex'
+
+" CoC Nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Markdown instan preview in web browser
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+" Bracey live editing html and css
+Plug 'turbio/bracey.vim'
+
+" Vim Latex Suite
+Plug 'vim-latex/vim-latex'
+
+" Vim emmet
+Plug 'mattn/emmet-vim'
+
+" Vim Fugitive
+Plug 'tpope/vim-fugitive'
+
+" Vim Fugitive
+Plug 'tpope/vim-surround'
+
+" Vim Spectr
+Plug 'nightsense/vimspectr'
+
+" Gruvbox
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+" END OF VIM-PLUG }}}
+
+" PACKAGES --- {{{
+packadd! matchit
+" END OF PACKAGES }}}
+
+" BASIC THINGS --- {{{
+" Remove vi compatibility
+set nocompatible
+
+" Backup and undo
+" -- [ Still need to find out how to correctly doing this ] --
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+" Search down into subfolders
+" Provides tab-commpletion for all file-related tasks
+set path+=**
+
+" Menu autocomplete
+" find those stuffs with `:h wildmode`
+set wildmenu
+set wildmode=list,longest
+
+" Disable mouse support
+set mouse-=-a
+
+" Line numbers
+set number relativenumber
+
+" Cursor highlighting
+set cursorline
+
+" Filetype & syntax highlighting
+filetype plugin indent on
+syntax on
+
+" Search highlighting
+set hls is
+
+" Tabs & indents
+set tabstop=2 shiftwidth=2 expandtab
+" END OF BASIC THINGS }}}
+
+" VIM COLORS STUFFS --- {{{
+" Enable Truecolors 
+set termguicolors
+" Alacritty need those to enable colors in vim
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Fix visual highlighting for strawberry colorscheme
+augroup myhighlight
+  autocmd!
+  autocmd ColorScheme * highlight Visual term=reverse cterm=bold,inverse ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+augroup END
+
+" Set colorscheme
+colorscheme strawberry-light
+"colorscheme vimspectr330-light
+"colorscheme gruvbox
+" }}}
+
+" MAPPINGS & KEYBINDINGS --- {{{
+" Leader Key
+" let mapleader = ",,"
+let mapleader = " "
+let maplocalleader = "\\"
+
+" Edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+
+" Source vimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" END OF MAPPINGS & KEYBINDINGS }}}
+
+" STATUSLINE SETTINGS --- {{{
+"let g:currentmode={
+"  \ 'n'      : 'Normal ',
+"  \ 'no'     : 'N·Operator Pending ',
+"  \ 'v'      : 'Visual ',
+"  \ 'V'      : 'V·Line ',
+"  \ '\<C-V>' : 'V·Block ',
+"  \ 's'      : 'Select ',
+"  \ 'S'      : 'S·Line ',
+"  \ '\<C-S>' : 'S·Block ',
+"  \ 'i'      : 'Insert ',
+"  \ 'R'      : 'Replace ',
+"  \ 'Rv'     : 'V·Replace ',
+"  \ 'c'      : 'Command ',
+"  \ 'cv'     : 'Vim Ex ',
+"  \ 'ce'     : 'Ex ',
+"  \ 'r'      : 'Prompt ',
+"  \ 'rm'     : 'More ',
+"  \ 'r?'     : 'Confirm ',
+"  \ '!'      : 'Shell ',
+"  \ 't'      : 'Terminal 
+"  \}
+
+" Set mode vim --- {{{
+function Modestl()
+  if mode() ==# "i"
+    let b:modenow = "INSERT"
+  elseif mode() ==# "no"
+    let b:modenow = "OP-PENDING"
+  elseif mode() ==# "v"
+    let b:modenow = "VISUAL"
+  elseif mode() ==# "V"
+    let b:modenow = "V-LINE"
+  elseif mode() ==# "CTRL-V"
+    let b:modenow = "V-BLOCK"
+  elseif mode() ==# "s"
+    let b:modenow = "SELECT"
+  elseif mode() ==# "S"
+    let b:modenow = "S-LINE"
+  elseif mode() ==# "R"
+    let b:modenow = "REPLACE"
+  elseif mode() ==# "Rv"
+    let b:modenow = "V-REPLACE"
+  elseif mode() ==# "c"
+    let b:modenow = "COMMAND"
+  elseif mode() ==# "cv"
+    let b:modenow = "VIM-EX"
+  elseif mode() ==# "ce"
+    let b:modenow = "EX"
+  elseif mode() ==# "r"
+    let b:modenow = "PROMPT"
+  elseif mode() ==# "rm"
+    let b:modenow = "MORE"
+  elseif mode() ==# "r?"
+    let b:modenow = "CONFIRM"
+  elseif mode() ==# "!"
+    let b:modenow = "SHELL"
+  elseif mode() ==# "t"
+    let b:modenow = "TERMINAL"
+  else
+    let b:modenow ="NORMAL"
+  endif
+  return b:modenow
+endfunction
+" }}}
+
+set laststatus=2
+
+set statusline=
+set statusline=%1*\ %{Modestl()}
+" User2 Color
+set statusline+=\ %2*
+" Filename, opsi F,f,[t]
+set statusline+=\ %t
+" User3 color
+set statusline+=\ %3*
+set statusline+=%(\ [%R%M]\ %)
+" Read only flag
+set statusline+=%4*%=
+" Line,Col | Total | Total Percentage
+set statusline+=%(%l,%c\ \|\ %4LL\ \|\ %p%%\ %)
+" Buffer number
+set statusline+=%2*\ b:%n\ 
+" Filetype
+set statusline+=%1*\ %Y\ 
+
+highlight User1 cterm=bold guibg=#d46a84 guifg=#fff0f7
+highlight User2 cterm=reverse
+highlight User3 cterm=bold guibg=#b5a3ac guifg=#fff0f7
+highlight User4 guibg=#f0dde6 guifg=#d46a84
+" }}}
+
+" BASH SCRIPT FILETYPE SETTINGS --- {{{
+augroup filetype_sh
+  autocmd!
+  autocmd FileType sh nnoremap <buffer> <localleader>c I#<esc>
+augroup END
+" }}}
+
+" VIM FILETYPE SETTINGS --- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim nnoremap <buffer> <localleader>c I"<esc>
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" LATEX FILETYPE SETTINGS --- {{{
+let g:tex_flavor = 'latex'
+
+" }}}
+
+" VIMTEX --- {{{
+" Vimtex viewer
+let g:vimtex_view_method = 'zathura'
+" Change default pdf-engine, but this block gives options
+let g:vimtex_compiler_latexmk = {
+  \ 'executable' : 'latexmk',
+  \ 'options' : [
+  \   '-xelatex',
+  \   '-file-line-error',
+  \   '-synctex=1',
+  \   '-interaction=nonstopmode',
+  \ ],
+  \}
+
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')  
+endif
+" }}}

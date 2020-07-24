@@ -1,0 +1,16 @@
+{
+  "tsserver.npm": "/usr/local/bin/npm",
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "eslint.options": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}
+
