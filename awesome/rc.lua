@@ -193,11 +193,11 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+    -- s.mytasklist = awful.widget.tasklist {
+    --    screen  = s,
+    --    filter  = awful.widget.tasklist.filter.currenttags,
+    --    buttons = tasklist_buttons
+    --}
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -211,7 +211,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        --s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
@@ -333,11 +333,11 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
     -- Volume
    awful.key( {}, "XF86AudioRaiseVolume", function() awful.spawn.with_shell("volume up") end,
-              {description = "Raise audio volume"}),
+              {description = "Raise audio volume", group = "Volume Control"}),
    awful.key( {}, "XF86AudioLowerVolume", function() awful.spawn.with_shell("volume down") end,
-              {description = "Lower audio volume"}),
+              {description = "Lower audio volume", group = "Volume Control"}),
    awful.key( {}, "XF86AudioMute", function() awful.spawn.with_shell("volume toggle") end,
-              {description = "Toggle Audio Mute"})
+              {description = "Toggle Audio Mute", group = "Volume Control"})
 )
 
 clientkeys = gears.table.join(
@@ -501,7 +501,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -573,3 +573,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- autostart
+awful.spawn.with_shell("~/.config/awesome/autostart.sh")
