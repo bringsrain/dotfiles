@@ -11,16 +11,16 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "FantasqueSansMono 10"
+theme.font          = "FantasqueSansMono 11"
 
 theme.bg_normal     = "#fff0f7"
-theme.bg_focus      = "#d46a84"
+theme.bg_focus      = "#fcc0bf"
 theme.bg_urgent     = "#f55050"
 theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = "#c2e2dd"
 
 theme.fg_normal     = "#d46a84"
-theme.fg_focus      = "#ffffff"
+theme.fg_focus      = "#fff0f7"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
@@ -124,7 +124,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = "/home/bringsrain/.local/share/icons/McMojave-circle"
 
 return theme
 
