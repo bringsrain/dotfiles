@@ -15,11 +15,14 @@ Plug 'lervag/vimtex'
 " CoC Nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" vim-jsonc
+Plug 'kevinoid/vim-jsonc'
+
 " Markdown instan preview in web browser
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Bracey live editing html and css
-Plug 'turbio/bracey.vim'
+"Plug 'turbio/bracey.vim'
 
 " Vim Latex Suite
 Plug 'vim-latex/vim-latex'
@@ -38,6 +41,7 @@ Plug 'nightsense/vimspectr'
 
 " Gruvbox
 Plug 'morhetz/gruvbox'
+
 
 call plug#end()
 " END OF VIM-PLUG }}}
@@ -58,7 +62,7 @@ set undodir=~/.vim/undodir
 set undofile
 
 " Search down into subfolders
-" Provides tab-commpletion for all file-related tasks
+" Provides tab-completion for all file-related tasks
 set path+=**
 
 " Menu autocomplete

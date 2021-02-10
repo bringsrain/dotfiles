@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-systemctl -q is-active dnscrypt-proxy.socket || sudo systemctl start dnscrypt-proxy.socket
+systemctl -q is-active dnscrypt-proxy.service || sudo systemctl start dnscrypt-proxy.service
 
-sudo tee /etc/resolv.conf > /dev/null << EOT
+tee /etc/resolv.conf > /dev/null << EOT
 nameserver ::1
 nameserver 127.0.0.1
 options edns0 single-request-reopen
