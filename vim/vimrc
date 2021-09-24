@@ -9,6 +9,9 @@
 " VIM-PLUG --- {{{
 call plug#begin('~/.vim/plugged')
 
+" ultisnips
+Plug 'SirVer/ultisnips'
+
 " vimtex
 Plug 'lervag/vimtex'
 
@@ -41,7 +44,6 @@ Plug 'nightsense/vimspectr'
 
 " Gruvbox
 Plug 'morhetz/gruvbox'
-
 
 call plug#end()
 " END OF VIM-PLUG }}}
@@ -237,11 +239,13 @@ let g:tex_flavor = 'latex'
 " VIMTEX --- {{{
 " Vimtex viewer
 let g:vimtex_view_method = 'zathura'
+
 " Change default pdf-engine, but this block gives options
 let g:vimtex_compiler_latexmk = {
-  \ 'executable' : 'latexmk',
+  \ 'executable' : 'latexmk' ,
   \ 'options' : [
   \   '-xelatex',
+  \   '-shell-escape',
   \   '-file-line-error',
   \   '-synctex=1',
   \   '-interaction=nonstopmode',
@@ -251,4 +255,12 @@ let g:vimtex_compiler_latexmk = {
 if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')  
 endif
+" }}}
+
+" Ultisnips --- {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" :UltiSnipsEdit
 " }}}

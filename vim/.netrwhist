@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/bringsrain/kojo/odis/website/public_html'
+let g:netrw_dirhist_6='/home/bringsrain/kojo/odis/website/odis/routes'
 let g:netrw_dirhist_5='/home/bringsrain/kojo/kominfo/sakip_secbreach'
 let g:netrw_dirhist_4='/home/bringsrain/kojo/kominfo'
 let g:netrw_dirhist_3='/home/bringsrain/kojo'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/home/bringsrain/kojo/secbreach/logs'
 let g:netrw_dirhist_0='/home/bringsrain/kojo/secbreach/logs/httpd'
 let g:netrw_dirhist_9='/home/bringsrain/kojo/secbreach/logs/httpd/10.4.1.16'
 let g:netrw_dirhist_8='/home/bringsrain/kojo/kominfo/sakip_secbreach/html/uploads/con7ext_sympy/brudulsympy/brudul.txt'
-let g:netrw_dirhist_7='/home/bringsrain/kojo/kominfo/sakip_secbreach/html/plugins/tinymce/js/tinymce/plugins/filemanager/thumbs/0'
-let g:netrw_dirhist_6='/home/bringsrain/Documents/learning/books/learning_python/learning.python'
