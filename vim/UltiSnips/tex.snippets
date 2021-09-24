@@ -1,0 +1,18 @@
+snippet laporanf4 "Report 12pt, Kertas F4" b
+\documentclass[12pt]{report}
+% Ukuran kertas F4 Indonesia dan margin jilid
+\usepackage[paperheight=330mm,paperwidth=215mm,left=4cm,top=3cm,right=3cm,bottom=3cm]{geometry}
+% Menggunakan modul babel untuk mengganti struktur dokumen menjadi bahasa
+\usepackage[indonesian]{babel}
+endsnippet
+
+snippet ceklis "Enable custom itemize for checklists" b
+% Konfigurasi checklists
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\centang}{\ding{51}}%
+\newcommand{\silang}{\ding{55}}%
+\newcommand{\selesai}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\centang}}\hspace{-2.5pt}}
+\newcommand{\gagal}{\rlap{$\square$}{\large\hspace{1pt}\silang}}
+endsnippet

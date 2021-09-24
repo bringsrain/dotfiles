@@ -1,0 +1,22 @@
+[options]
+font = Fantasque Sans Mono 10
+
+[colors]
+foreground = #3b2c33
+background = #fff0f7
+color0 = #fff0f7
+color1 = #bf5858
+color2 = #508a50
+color3 = #ab8e38
+color4 = #458a8a
+color5 = #ab6a7a
+color6 = #557b9e
+color7 = #3b2c33
+color8 = #f0dde6
+color9 = #f55050
+color10 = #219e21
+color11 = #d4ac35
+color12 = #1b9e9e
+color13 = #d46a84
+color14 = #468dd4
+color15 = #2b1d24

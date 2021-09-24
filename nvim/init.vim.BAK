@@ -1,0 +1,61 @@
+" Vim-plug
+call plug#begin('~/.config/nvim/plugged')
+
+" coc nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" nvim markdown-preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+
+" vim lightline
+Plug 'itchyny/lightline.vim'
+
+" vim gruvbox
+Plug 'morhetz/gruvbox'
+
+" vim strawberry - pink theme
+Plug 'nightsense/strawberry'
+
+" vim live edit html, css, javascript
+Plug 'turbio/bracey.vim'
+
+" vim fugitive
+Plug 'tpope/vim-fugitive'
+
+" vim surround
+Plug 'tpope/vim-surround'
+
+" vim emmet
+Plug 'mattn/emmet-vim'
+
+call plug#end()
+
+" Set wildmode
+set wildmenu
+set wildmode=list:longest,full
+
+"set cursorline (beri garis di kursor)
+set cursorline
+
+" Disable mouse support in vim
+set mouse-=a
+
+" Set syntax enable
+syntax enable
+filetype plugin on
+filetype indent on
+"
+" TRUECOLORS ENABLE
+"set termguicolors
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+colorscheme strawberry-light
+
+" Set number and relativenumber
+set number relativenumber
+
+" vim lightline config
+let g:lightline = {
+	\ 'colorscheme': 'strawberry',
+	\}

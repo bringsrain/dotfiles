@@ -1,0 +1,5 @@
+[Unit]
+Description=check-battery
+
+[Service]
+ExecStart=/home/bringsrain/.config/systemd/user/check-battery.sh

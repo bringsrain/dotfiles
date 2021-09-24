@@ -1,0 +1,45 @@
+## straw-viewer
+alias ytv720='pipe-viewer --resolution=720p'
+
+# Execute winbox
+alias winbox='wine /home/bringsrain/.opt/winbox64.exe &'
+
+# Office Forti VPN
+alias upkojo='nmcli c up kojo --ask'
+alias downkojo='nmcli c down kojo'
+
+## CCTV
+alias cckomsandi='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/801'
+alias cckomparkirsamping='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/701'
+alias cckomparkirkiri='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/601'
+alias cckomparkirkanan='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/501'
+alias cckomaula='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/401'
+alias cckomaptika='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/301'
+alias cckomfrontline='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/201'
+alias cckomsekre='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/101'
+alias cckomall1='mpv rtsp://admin:Qwas12-=@103.155.144.10:554/Streaming/Channels/001'
+alias cckomppid='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/801'
+alias cckomlobby='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/701'
+alias cckomkpdalam='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/601'
+alias cckomkp='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/501'
+alias cckomgangsamping='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/401'
+alias cckommusholla='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/301'
+alias cckombelakangdapur='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/201'
+alias cckomkpkiri='mpv rtsp://admin:Qwas12-=@103.155.144.10:555/Streaming/Channels/101'
+
+alias ccdc='mpv "rtsp://admin:Qwas12-=@192.2.4.2:554/cam/realmonitor?channel=4&subtype=0"'
+
+## ILO JAVAWS
+#alias ilojava='/home/bringsrain/.opt/jre1.8.0_251/bin/javaws'
+
+# colorful pacman
+alias pacman='pacman $1 --color=always'
+
+# Enable Dnscrypt
+alias endnscrypt='pkexec activate_dnscrypt'
+
+# Monitor Orientation
+alias monleft='xrandr --output HDMI-1 --auto --left-of eDP-1 --auto'
+
+# Turn On Leantime Project Management
+alias leantimeon='sudo systemctl start mariadb php-fpm7.service nginx'

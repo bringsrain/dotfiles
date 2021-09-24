@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/bringsrain/kojo/kominfo/metro/captive-portal/titikpanas'
+let g:netrw_dirhist_4='/home/bringsrain/kojo/kominfo/metro/captive-portal/hotspot'
+let g:netrw_dirhist_3='/home/bringsrain/kojo/kominfo/metro/captive-portal'
+let g:netrw_dirhist_2='/home/bringsrain/kojo/kominfo/metro/captive-portal/titikpanas'
+let g:netrw_dirhist_1='/home/bringsrain/dotfiles/nvim/plugged/lightline.vim/autoload/lightline/colorscheme'

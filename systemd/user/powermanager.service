@@ -1,0 +1,7 @@
+[Unit]
+Description=Power Manager
+
+[Service]
+ExecStart=/home/bringsrain/.local/bin/powermanager start
+#ExecStop=/home/bringsrain/.local/bin/powermanager stop
+#ExecReload=/home/bringsrain/.local/bin/powermanager restart

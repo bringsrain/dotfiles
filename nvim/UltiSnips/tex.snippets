@@ -1,0 +1,51 @@
+snippet	laporanf4 "Set dokumen laporan kertas F4, bahasa Indonesia" b
+\documentclass[${1:12}pt]{report}
+\usepackage[paperwidth=215mm,paperheight=330mm,left=${1:4}cm,top=${2:3}cm,right=${3:3}cm,bottom=${4:3}cm]{geometry}
+\usepackage[indonesian]{babel}
+endsnippet
+
+snippet fig "figure environment" b
+\begin{figure}[${1:H}]
+  \centering
+  \includegraphics[width=${2:.8}\textwidth]{$3}
+  \caption{$4}
+  \label{fig:$5}
+\end{figure}
+endsnippet
+
+snippet mintedenv "Minted highlighting environment" b
+% Custom enviroment for minted code highlighting
+\newenvironment{sekrip}[1][htp]
+{\VerbatimEnvironment
+\begin{minted}[breaklines,linenos,bgcolor=lightgray,fontsize=\scriptsize]}
+{\end{minted}}
+endsnippet
+
+snippet lstlistingenv "Syntax highlighting with lstlisting environment" b
+% lstlisting config
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.92}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{kodingall}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+\lstset{style=kodingall}
+endsnippet
